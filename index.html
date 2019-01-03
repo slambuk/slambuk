@@ -20,10 +20,10 @@ function createlink(){
 	localStorage.setItem("questions", JSON.stringify(ques));
 	
 	var storedques = JSON.parse(localStorage.getItem("questions"));
-	$("#dispques").append('<h2>Your questions are :</h2>');
+	/*$("#dispques").append('<h2>Your questions are :</h2>');
 	for (var i=0; i<storedques.length; i++){	
 		$("#dispques").append(storedques[i]+'<br>');
-	}
+	}*/
 	
 	var param = JSON.stringify(ques);
 	//param = 'blah blah blah';
@@ -31,14 +31,15 @@ function createlink(){
 	//var encrypted2 = CryptoJS.AES.encrypt(encrypted.toString(CryptoJS.enc.Utf8), "9433211656");
 	//var decrypted2 = CryptoJS.AES.decrypt(encrypted2, "9433211656");
 	var decrypted = CryptoJS.AES.decrypt(encrypted, "7044015977");
-	$("#dispques").append('<br>'+param+'<br>'+encrypted+'<br>'+decrypted.toString(CryptoJS.enc.Utf8)+'<br>'+param);
+	//$("#dispques").append('<br>'+param+'<br>'+encrypted+'<br>'+decrypted.toString(CryptoJS.enc.Utf8)+'<br>'+param);
 	//document.getElementById("dispques").innerHTML = decrypted;
 	
 	document.getElementById("link").href = 'urlparse.html?q='+encrypted;
-	document.getElementById("copylink").innerHTML = 'https://slambuk.github.io/slambuk/urlparse.html?q='+encrypted;
+	//document.getElementById("copylink").innerHTML = 'https://slambuk.github.io/slambuk/urlparse.html?q='+encrypted;
 	document.getElementById("linkdiv").style.display = 'block';
 		
-	shorturl();
+	shorturl('https://slambuk.github.io/slambuk/urlparse.html?q='+encrypted);
+	document.getElementById("surl").value = window.location.href;
 }
 
 </script>
@@ -60,8 +61,8 @@ function createlink(){
 <div id='dispques' ></div>
 
 <div id='displink' >
-<br><label id='copylink' ></label><br>
-<a id='link' href='' >click</a>
+<br><label style='display:block;' id='copylink' ></label><br>
+<a style='display:block;' id='link' href='' >click</a>
 <br>
 </div>
 
