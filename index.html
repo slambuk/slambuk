@@ -35,10 +35,11 @@ function createlink(){
 	//document.getElementById("dispques").innerHTML = decrypted;
 	
 	document.getElementById("link").href = 'urlparse.html?q='+encrypted;
-	//document.getElementById("copylink").innerHTML = 'https://slambuk.github.io/slambuk/urlparse.html?q='+encrypted;
+	document.getElementById("copylink").innerHTML = 'https://slambuk.github.io/slambuk/urlparse.html?q='+encrypted;
 	document.getElementById("linkdiv").style.display = 'block';
 		
-	shorturl('https://slambuk.github.io/slambuk/urlparse.html?q='+encrypted);
+	//shorturl('https://slambuk.github.io/slambuk/urlparse.html?q='+encrypted);
+	shorturl();
 	document.getElementById("surl").value = window.location.href;
 }
 
@@ -61,7 +62,7 @@ function createlink(){
 <div id='dispques' ></div>
 
 <div id='displink' >
-<br><label style='display:block;' id='copylink' ></label><br>
+<br><label style='display:none;' id='copylink' ></label><br>
 <a style='display:block;' id='link' href='' >click</a>
 <br>
 </div>
