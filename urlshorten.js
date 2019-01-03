@@ -59,11 +59,12 @@ function send_request(url) {
 })
 }
 
-function shorturl(){
-    var longurl = geturl();
+function shorturl(x){
+    //var longurl = geturl();
+	var longurl = x;
     genhash();
     send_request(longurl);
-	document.getElementById("surl").value = window.location.href;
+	//document.getElementById("surl").value = window.location.href;
 	//document.getElementById("surl").innerHTML = window.location.href + '#' + hashhash;
 }
 
