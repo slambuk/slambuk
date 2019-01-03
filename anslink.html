@@ -5,18 +5,13 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.2/rollups/aes.js"></script>
 <script>
 
-//localStorage.removeItem("questions");
-
-
-	
-
 
 </script>
 </head>
 <body>
 <div>
 
-<br><label style='display:block;' id='copylink' ></label><br>
+<br><label style='display:none;' id='copylink' ></label><br>
 
 <div ><input type='text' id='surl' value='' placeholder='shareable link' ><button onclick='copytext()'>copy link</button></div>
 </div>
@@ -28,8 +23,9 @@
 
 var encrypted = localStorage.getItem("answerslink");
 	
-	var longurl = 'https://slambuk.github.io/slambuk/ansparse.html?a='+encrypted;
-	shorturl(longurl);
+	document.getElementById("copylink").innerHTML = 'https://slambuk.github.io/slambuk/ansparse.html?a='+encrypted;
+	//shorturl('https://slambuk.github.io/slambuk/ansparse.html?a='+encrypted);
+	shorturl();
 	document.getElementById("surl").value = window.location.href;
 
 function copytext() {
