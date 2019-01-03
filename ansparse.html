@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.2/rollups/aes.js"></script>
+<script>
+
+
+
+</script>
+</head>
+<body style='background:yellow;'>
+<a href='questions.php' >HOME</a>
+
+<div id='dispques' ></div>
+<div>
+<p>Questions by <label id='qname' ></label></p>
+<p><label id='q1'></label><br><label id='a1' placeholder='your answer' ></label></p>
+<p><label id='q2'></label><br><label id='a2' placeholder='your answer' ></label></p>
+<p><label id='q3'></label><br><label id='a3' placeholder='your answer' ></label></p>
+<p><label id='q4'></label><br><label id='a4' placeholder='your answer' ></label></p>
+<p><label id='q5'></label><br><label id='a5' placeholder='your answer' ></label></p>
+<p>Your full name or instagram username : <label id='aname'  ><label/></p>
+</div>
+
+
+</body>
+<script>
+
+var urlParams;
+(window.onpopstate = function () {
+    var match,
+        //pl     = /\+/g,  // Regex for replacing addition symbol with a space
+        search = /([^&=]+)=?([^&]*)/g,
+        decode = function (s) { return decodeURIComponent(s); },
+        query  = window.location.search.substring(1);
+		//query = '?i=main&mode=front&sid=de8d49b78a85a322c4155015fdce22c4&enc=+Hello%20&empty';
+
+    urlParams = {};
+    while (match = search.exec(query))
+       urlParams[decode(match[1])] = decode(match[2]);
+})();
+
+var encrypted = urlParams["a"];
+//var encrypted = CryptoJS.AES.encrypt('blah', "7044015977");
+var decrypted = CryptoJS.AES.decrypt(encrypted, "7044015977");
+//var questions = decrypted.toString(CryptoJS.enc.Utf8);
+//$("#dispques").append('<br>'+decrypted.toString(CryptoJS.enc.Utf8));
+
+var storedans = JSON.parse(decrypted.toString(CryptoJS.enc.Utf8));
+	//$("#dispques").append('<h2>Your questions are :</h2>');
+	document.getElementById("q1").innerHTML = storedans[0];
+	document.getElementById("a1").innerHTML = storedans[1];
+	document.getElementById("q2").innerHTML = storedans[2];
+	document.getElementById("a2").innerHTML = storedans[3];
+	document.getElementById("q3").innerHTML = storedans[4];
+	document.getElementById("a3").innerHTML = storedans[5];
+	document.getElementById("q4").innerHTML = storedans[6];
+	document.getElementById("a4").innerHTML = storedans[7];
+	document.getElementById("q5").innerHTML = storedans[8];
+	document.getElementById("a5").innerHTML = storedans[9];
+	document.getElementById("qname").innerHTML = storedans[10];
+	document.getElementById("aname").innerHTML = storedans[11];
+
+
+</script>
+</html>
