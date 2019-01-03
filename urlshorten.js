@@ -59,9 +59,9 @@ function send_request(url) {
 })
 }
 
-function shorturl(x){
-    //var longurl = geturl();
-	var longurl = x;
+function shorturl(){
+    var longurl = geturl();
+	//var longurl = x;
     genhash();
     send_request(longurl);
 	//document.getElementById("surl").value = window.location.href;
