@@ -5,15 +5,68 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.2/rollups/aes.js"></script>
 <script>
 
+function subans(){
 
+	var ans = [];
+	ans[0] = document.getElementById("q1").innerHTML;
+	ans[1] = document.getElementById("a1").value;
+	ans[2] = document.getElementById("q2").innerHTML;
+	ans[3] = document.getElementById("a2").value;
+	ans[4] = document.getElementById("q3").innerHTML;
+	ans[5] = document.getElementById("a3").value;
+	ans[6] = document.getElementById("q4").innerHTML;
+	ans[7] = document.getElementById("a4").value;
+	ans[8] = document.getElementById("q5").innerHTML;
+	ans[9] = document.getElementById("a5").value;
+	ans[10] = document.getElementById("qname").innerHTML;
+	ans[11] = document.getElementById("aname").value;
+	//localStorage.setItem("answers", JSON.stringify(ans));
+	
+	//var storedques = JSON.parse(localStorage.getItem("answers"));
+	/*$("#dispques").append('<h2>Your questions are :</h2>');
+	for (var i=0; i<storedques.length; i++){	
+		$("#dispques").append(storedques[i]+'<br>');
+	}*/
+	
+		var param = JSON.stringify(ans);
+	//param = 'blah blah blah';
+		var encrypted2 = CryptoJS.AES.encrypt(param, "7044015977");
+		localStorage.setItem("answerslink", encrypted2);
+	//var encrypted2 = CryptoJS.AES.encrypt(encrypted.toString(CryptoJS.enc.Utf8), "9433211656");
+	//var decrypted2 = CryptoJS.AES.decrypt(encrypted2, "7044015977");
+	//$("#dispques").append('<br>'+param+'<br>'+encrypted+'<br>'+decrypted.toString(CryptoJS.enc.Utf8)+'<br>'+param);
+		var decrypted2 = CryptoJS.AES.decrypt((localStorage.getItem("answerslink")), "7044015977");
+		$("#dispques").append('<br>blah'+decrypted2.toString(CryptoJS.enc.Utf8));
+	//document.getElementById("dispques").innerHTML = decrypted;
+	
+		//document.getElementById("link").href = 'ansparse.html';
+	//document.getElementById("copylink").innerHTML = 'https://slambuk.github.io/slambuk/urlparse.html?q='+encrypted;
+		//document.getElementById("linkdiv").style.display = 'block';
+		window.location.href = 'anslink.html';
+		
+	//shorturl();
+}
 
 </script>
 </head>
 <body style='background:yellow;'>
-<a href='https://slambuk.github.io/slambuk' >HOME</a>
+<a href='questions.php' >HOME</a>
 
 <div id='dispques' ></div>
+<div>
+<p>Questions by <label id='qname' ></label></p>
+<p><label id='q1'></label><br><textarea id='a1' placeholder='your answer' ></textarea></p>
+<p><label id='q2'></label><br><textarea id='a2' placeholder='your answer' ></textarea></p>
+<p><label id='q3'></label><br><textarea id='a3' placeholder='your answer' ></textarea></p>
+<p><label id='q4'></label><br><textarea id='a4' placeholder='your answer' ></textarea></p>
+<p><label id='q5'></label><br><textarea id='a5' placeholder='your answer' ></textarea></p>
+<p>Your full name or instagram username : <input type='text' id='aname' placeholder='enter your name' /></p>
+<p><button onclick='subans()'>create link</button></p>
+</div>
 
+<div id='linkdiv' style='display:none;' >
+<a style='display:block;' id='link' href='' >click</a>
+</div>
 
 </body>
 <script>
@@ -36,14 +89,16 @@ var encrypted = urlParams["q"];
 //var encrypted = CryptoJS.AES.encrypt('blah', "7044015977");
 var decrypted = CryptoJS.AES.decrypt(encrypted, "7044015977");
 //var questions = decrypted.toString(CryptoJS.enc.Utf8);
-$("#dispques").append('<br>'+decrypted.toString(CryptoJS.enc.Utf8));
-//document.getElementById("dispques").innerHTML = decrypted.toString(CryptoJS.enc.Utf8);
+//$("#dispques").append('<br>'+decrypted.toString(CryptoJS.enc.Utf8));
 
 var storedques = JSON.parse(decrypted.toString(CryptoJS.enc.Utf8));
-	$("#dispques").append('<h2>Your questions are :</h2>');
-	for (var i=0; i<storedques.length; i++){	
-		$("#dispques").append(storedques[i]+'<br>');
-	}
+	//$("#dispques").append('<h2>Your questions are :</h2>');
+	document.getElementById("q1").innerHTML = storedques[0];
+	document.getElementById("q2").innerHTML = storedques[1];
+	document.getElementById("q3").innerHTML = storedques[2];
+	document.getElementById("q4").innerHTML = storedques[3];
+	document.getElementById("q5").innerHTML = storedques[4];
+	document.getElementById("qname").innerHTML = storedques[5];
 
 
 </script>
