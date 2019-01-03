@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.2/rollups/aes.js"></script>
+<script>
+
+//localStorage.removeItem("questions");
+
+
+	
+
+
+</script>
+</head>
+<body>
+<div>
+
+<br><label style='display:block;' id='copylink' ></label><br>
+
+<div ><input type='text' id='surl' value='' placeholder='shareable link' ><button onclick='copytext()'>copy link</button></div>
+</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="urlshorten.js" type="text/javascript"></script>
+</body>
+<script>
+
+var encrypted = localStorage.getItem("answerslink");
+	
+	var longurl = 'https://slambuk.github.io/slambuk/ansparse.html?a='+encrypted;
+	shorturl(longurl);
+	document.getElementById("surl").value = window.location.href;
+
+function copytext() {
+  var copyText = document.getElementById("surl");
+  copyText.select();
+  document.execCommand("copy");
+}
+
+</script>
+</html>
