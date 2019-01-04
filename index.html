@@ -1,6 +1,59 @@
 <!DOCTYPE html>
 <html>
 <head>
+<title></title>
+<meta charset='UTF-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0'>
+<link href="https://fonts.googleapis.com/css?family=Sacramento|Shadows+Into+Light|Poppins|Emilys+Candy|Megrim|Faster+One|Amatic+SC|Anton|Monoton|Oleo+Script|Sigmar+One|Cabin+Sketch|Homemade+Apple" rel="stylesheet">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script><style>
+/*body{
+	margin:0;
+	  	
+}
+.wrapper{
+	width:100%;
+	height:850px;
+	display:grid;
+	grid-template-columns: 1fr 1.5fr 1fr;
+	grid-template-rows: 3fr 1fr;
+	grid-template-areas:
+		"container1 container1 container1";
+		"container2 container2 container2";
+}
+
+.container1{
+	grid-area:container1;
+	background:red;
+	//padding:5px;
+	//display:block;
+}
+.container2{
+	grid-area:container2;
+	background:black;
+	//padding:5px;
+	//display:block;
+}*/
+
+textarea {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+	
+    width: 60%;
+	resize: none;
+}
+
+@media screen and (max-width: 34em){
+
+textarea{
+	width: 250px;
+}
+
+}
+
+</style>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.2/rollups/aes.js"></script>
 <script>
@@ -46,29 +99,46 @@ function createlink(){
 </script>
 </head>
 <body>
-<div>
 
-<p>question 1 : <textarea id='q1' placeholder='question 1' name='ques1' ></textarea></p>
-<p>question 2 : <textarea id='q2' placeholder='question 2' name='ques2' ></textarea></p>
-<p>question 3 : <textarea id='q3' placeholder='question 3' name='ques3' ></textarea></p>
-<p>question 4 : <textarea id='q4' placeholder='question 4' name='ques4' ></textarea></p>
-<p>question 5 : <textarea id='q5' placeholder='question 5' name='ques5' ></textarea></p>
-<p>Your full name or instagram username : <input type='text' id='name' placeholder='enter your name' /></p>
-<p><input onclick='createlink()' type='button' name='addques' value='create link' /></p>
-
+<div class="jumbotron text-center" style='font-family:amatic sc;'>
+  <h1 style='font-size:60px;'><b>SLAMBUK</b></h1>
+  <p style='font-size:30px;'>Know the world, your way</p> 
 </div>
 
-<div id='linkdiv' style='display:none;'>
+<div class="container" style='text-align:center; width:100%; background:; '>
+<div class="row" style='display:inline-block; width:100%; background:;'>
+<div class="col-sm-4" style='display:inline-block; background:; width:100%;'>
+
+<div style='display:inline-block; font-family:calibri; width:100%; background:; padding-bottom:30px;'>
+<h2 style='font-family:sacramento;'>Your list of questions</h2><br>
+<p>#question1<br><textarea id='q1' rows='3' placeholder='question 1' name='ques1' style='padding-left:5px; padding-right:5px;' ></textarea></p>
+<p>#question2<br><textarea id='q2' rows='3' placeholder='question 2' name='ques2' style='padding-left:5px; padding-right:5px;' ></textarea></p>
+<p>#question3<br><textarea id='q3' rows='3' placeholder='question 3' name='ques3' style='padding-left:5px; padding-right:5px;' ></textarea></p>
+<p>#question4<br><textarea id='q4' rows='3' placeholder='question 4' name='ques4' style='padding-left:5px; padding-right:5px;' ></textarea></p>
+<p>#question5<br><textarea id='q5' rows='3' placeholder='question 5' name='ques5' style='padding-left:5px; padding-right:5px;' ></textarea></p>
+<p>#your_name<br><input type='text' id='name' placeholder='enter your name' style='text-align:center;' /></p>
+<p><input onclick='createlink()' type='button' name='addques' value='create shareable link' /></p>
+</div>
+
+<div id='linkdiv' style='display:none; padding-bottom:30px;'>
 <div id='dispques' ></div>
 
 <div id='displink' >
-<br><label style='display:none;' id='copylink' ></label><br>
+<label style='display:none;' id='copylink' ></label>
 <a style='display:block;' id='link' href='' >click</a>
 <br>
 </div>
 
-<div ><input type='text' id='surl' value='' placeholder='shareable link' ><button onclick='copytext()'>copy link</button></div>
+<div><input type='text' id='surl' value='' placeholder='shareable link' ><button onclick='copytext()'>copy link</button></div>
 <!--<div><label id='surl' ></label><button onclick='copytext()'>copy link</button></div>-->
+</div>
+
+<div class='footer' style='font-family:sacramento; font-size:25px; padding:20px;'>
+<p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable</p>
+</div>
+
+</div>
+</div>
 </div>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
