@@ -57,6 +57,12 @@ textarea{
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.2/rollups/aes.js"></script>
 <script>
+$(document).ready(function() {
+    $('html,body').animate({
+			scrollTop: $("#cont").offset().top
+		}, 'slow');
+});
+
 
 function subans(){
 
@@ -116,7 +122,7 @@ function howto(){
 <p style=' font-family:Oleo Script; color:white;'><button onclick='howto()' class='btn'>How to do that?</button></p>  
 </div>
 
-<div class="container" style='text-align:center; width:100%; background:; padding:0px;'>
+<div id='cont' class="container" style='text-align:center; width:100%; background:; padding:0px;'>
 <div class="row" style='display:inline-block; width:100%; background:;'>
 <div class="col-sm-4" style='display:inline-block; background:; width:100%;'>
 
@@ -132,7 +138,7 @@ function howto(){
 <p><label id='q4' style='width:80%; font-weight:bold;'></label><br><textarea id='a4' rows='3' placeholder='your answer' style='padding-left:5px; padding-right:5px; border:2px solid #1a1a1a;' ></textarea></p>
 <p><label id='q5' style='width:80%; font-weight:bold;'></label><br><textarea id='a5' rows='3' placeholder='your answer' style='padding-left:5px; padding-right:5px; border:2px solid #1a1a1a;' ></textarea></p>
 <p><b> </b><br><input type='text' id='aname' placeholder='your name' style='border:2px solid #1a1a1a; text-align:center;' /></p>
-<p style=' font-family:Oleo Script;'><br><button class='btn' onclick='subans()'>create link</button></p>
+<p style=' font-family:Oleo Script;'><br><button class='btn' onclick='subans()'>create shareable link</button></p>
 </div>
 
 <div id='linkdiv' style='display:none;' >
