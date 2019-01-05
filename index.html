@@ -93,6 +93,10 @@ function createlink(){
 	//shorturl('https://slambuk.github.io/slambuk/urlparse.html?q='+encrypted);
 	shorturl();
 	document.getElementById("surl").value = window.location.href;
+	
+	$('html,body').animate({
+			scrollTop: $("#clink").offset().top
+		}, 'slow');
 }
 
 function howto(){
@@ -135,7 +139,7 @@ function howto(){
 <br>
 </div>
 
-<div><input type='text' id='surl' value='' placeholder='shareable link' style='font-family:calibri; padding:5px; border:2px solid #1a1a1a;' >
+<div id='clink'><input type='text' id='surl' value='' placeholder='shareable link' style='font-family:calibri; padding:5px; border:2px solid #1a1a1a;' >
 <br><br><input type='button' id='copybtn' class='btn' onclick='copytext()' style=' font-family:Oleo Script; color:white;' value='copy' />
 <!--<p><br><mark style='padding:5px; background:#404040; color:white; font-size:13px; font-family:calibri;'>link copied</mark></p>-->
 </div>
@@ -172,6 +176,8 @@ function copytext() {
   document.execCommand("copy");
   
   document.getElementById("copybtn").value = "link copied";
+  
+  
 }
 
 </script>
