@@ -1,6 +1,59 @@
 <!DOCTYPE html>
 <html>
 <head>
+<title></title>
+<meta charset='UTF-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0'>
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+
+<link href="https://fonts.googleapis.com/css?family=Sacramento|Shadows+Into+Light|Poppins|Emilys+Candy|Megrim|Faster+One|Amatic+SC|Anton|Monoton|Oleo+Script|Sigmar+One|Cabin+Sketch|Homemade+Apple" rel="stylesheet">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script><style>
+
+body{
+	margin:0;
+	background-image: url("https://cadel.xyz/media/swirl_pattern.png");
+}
+
+.btn{
+	background:#404040;
+	border-radius:50px;
+	color:white;
+	width:200px;
+	font-size:17px;
+	//text-decoration: none;
+}
+.btn:hover{
+	color:white;
+}
+.btn:focus{
+	color:white;
+}
+
+label{
+	font-weight: normal;
+}
+
+textarea {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+	
+    width: 60%;
+	resize: none;
+}
+
+@media screen and (max-width: 34em){
+
+textarea{
+	width: 250px;
+}
+
+}
+
+</style>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.2/rollups/aes.js"></script>
 <script>
@@ -35,8 +88,8 @@ function subans(){
 	//var encrypted2 = CryptoJS.AES.encrypt(encrypted.toString(CryptoJS.enc.Utf8), "9433211656");
 	//var decrypted2 = CryptoJS.AES.decrypt(encrypted2, "7044015977");
 	//$("#dispques").append('<br>'+param+'<br>'+encrypted+'<br>'+decrypted.toString(CryptoJS.enc.Utf8)+'<br>'+param);
-		var decrypted2 = CryptoJS.AES.decrypt((localStorage.getItem("answerslink")), "7044015977");
-		$("#dispques").append('<br>blah'+decrypted2.toString(CryptoJS.enc.Utf8));
+		//var decrypted2 = CryptoJS.AES.decrypt((localStorage.getItem("answerslink")), "7044015977");
+		//$("#dispques").append('<br>blah'+decrypted2.toString(CryptoJS.enc.Utf8));
 	//document.getElementById("dispques").innerHTML = decrypted;
 	
 		//document.getElementById("link").href = 'ansparse.html';
@@ -47,25 +100,52 @@ function subans(){
 	//shorturl();
 }
 
+function howto(){
+	$('html,body').animate({
+			scrollTop: $("#foot").offset().top
+		}, 'slow');
+}
+
 </script>
 </head>
-<body style='background:yellow;'>
-<a href='index.html' >HOME</a>
+<body style='background:;'>
+
+<div class="jumbotron text-center" style='font-family:amatic sc; background:white; /*background:rgba(26, 26, 26, 0.1);*/'>
+  <h1 style='font-size:60px;'><b>SLAMBUK</b></h1>
+  <p style='font-size:30px;'>Know the world, your way</p>
+<p style=' font-family:Oleo Script; color:white;'><button onclick='howto()' class='btn'>How to do that?</button></p>  
+</div>
+
+<div class="container" style='text-align:center; width:100%; background:; padding:0px;'>
+<div class="row" style='display:inline-block; width:100%; background:;'>
+<div class="col-sm-4" style='display:inline-block; background:; width:100%;'>
+
+<a href='index.html' style='text-decoration:none; color:black; font-size:20px;' ><i class="fas fa-home"></i></a>
 
 <div id='dispques' ></div>
-<div>
-<p>Questions by <label id='qname' ></label></p>
-<p><label id='q1'></label><br><textarea id='a1' placeholder='your answer' ></textarea></p>
-<p><label id='q2'></label><br><textarea id='a2' placeholder='your answer' ></textarea></p>
-<p><label id='q3'></label><br><textarea id='a3' placeholder='your answer' ></textarea></p>
-<p><label id='q4'></label><br><textarea id='a4' placeholder='your answer' ></textarea></p>
-<p><label id='q5'></label><br><textarea id='a5' placeholder='your answer' ></textarea></p>
-<p>Your full name or instagram username : <input type='text' id='aname' placeholder='enter your name' /></p>
-<p><button onclick='subans()'>create link</button></p>
+
+<div style='display:inline-block; font-family:calibri; width:100%; background:; padding-bottom:30px;' >
+<p><label id='qname' style='font-weight:bold; font-size:30px;' ></label></p>
+<p><label id='q1' style='width:80%; font-weight:bold;'></label><br><textarea id='a1' rows='3' placeholder='your answer' style='padding-left:5px; padding-right:5px; border:2px solid #1a1a1a;' ></textarea></p>
+<p><label id='q2' style='width:80%; font-weight:bold;'></label><br><textarea id='a2' rows='3' placeholder='your answer' style='padding-left:5px; padding-right:5px; border:2px solid #1a1a1a;' ></textarea></p>
+<p><label id='q3' style='width:80%; font-weight:bold;'></label><br><textarea id='a3' rows='3' placeholder='your answer' style='padding-left:5px; padding-right:5px; border:2px solid #1a1a1a;' ></textarea></p>
+<p><label id='q4' style='width:80%; font-weight:bold;'></label><br><textarea id='a4' rows='3' placeholder='your answer' style='padding-left:5px; padding-right:5px; border:2px solid #1a1a1a;' ></textarea></p>
+<p><label id='q5' style='width:80%; font-weight:bold;'></label><br><textarea id='a5' rows='3' placeholder='your answer' style='padding-left:5px; padding-right:5px; border:2px solid #1a1a1a;' ></textarea></p>
+<p><b> </b><br><input type='text' id='aname' placeholder='your name' style='border:2px solid #1a1a1a; text-align:center;' /></p>
+<p style=' font-family:Oleo Script;'><br><button class='btn' onclick='subans()'>create link</button></p>
 </div>
 
 <div id='linkdiv' style='display:none;' >
 <a style='display:block;' id='link' href='' >click</a>
+</div>
+
+</div>
+</div>
+
+<div id='foot' class='footer' style='font-family:sacramento; width:100%; font-size:25px; padding: 60px 20px 60px 20px;  color:black; background:white;'>
+<p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable</p>
+</div>
+
 </div>
 
 </body>
