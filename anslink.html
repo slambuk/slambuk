@@ -1,19 +1,126 @@
 <!DOCTYPE html>
 <html>
 <head>
+<title>SLAMBUK</title>
+<meta charset='UTF-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0'>
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+
+<link href="https://fonts.googleapis.com/css?family=Sacramento|Shadows+Into+Light|Poppins|Emilys+Candy|Megrim|Faster+One|Amatic+SC|Anton|Monoton|Oleo+Script|Sigmar+One|Cabin+Sketch|Homemade+Apple" rel="stylesheet">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script><style>
+
+body{
+	margin:0;
+	background-image: url("https://cadel.xyz/media/swirl_pattern.png");
+}
+
+.btn{
+	background:#404040;
+	border-radius:50px;
+	color:white;
+	width:200px;
+	font-size:17px;
+	//text-decoration: none;
+}
+.btn:hover{
+	color:white;
+}
+.btn:focus{
+	color:white;
+}
+
+label{
+	font-weight: normal;
+}
+
+textarea {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+	
+    width: 60%;
+	resize: none;
+}
+
+@media screen and (max-width: 34em){
+
+textarea{
+	width: 250px;
+}
+
+}
+
+</style>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.2/rollups/aes.js"></script>
 <script>
+$(document).ready(function() {
+    $('html,body').animate({
+			scrollTop: $("#cont").offset().top
+		}, 'slow');
+});
 
+function howto(){
+	$('html,body').animate({
+			scrollTop: $("#foot").offset().top
+		}, 'slow');
+}
 
 </script>
 </head>
 <body>
-<div>
 
-<br><label style='display:none;' id='copylink' ></label><br>
+<div class="jumbotron text-center" style='font-family:amatic sc; background:white; /*background:rgba(26, 26, 26, 0.1);*/'>
+  <h1 style='font-size:60px;'><b>SLAMBUK</b></h1>
+  <p style='font-size:30px;'>Know the world, your way</p>
+<p style=' font-family:Oleo Script; color:white;'><button onclick='howto()' class='btn'>How to do that?</button></p>  
+</div>
 
-<div ><input type='text' id='surl' value='' placeholder='shareable link' ><button onclick='copytext()'>copy link</button></div>
+<div id='cont' class="container" style='text-align:center; width:100%; background:; padding:0px;'>
+<div class="row" style='display:inline-block; width:100%; background:;'>
+<div class="col-sm-4" style='display:inline-block; background:; width:100%;'>
+
+<div style=' height:500px; font-family:calibri;'>
+<div style='padding-bottom:5px;'><a href='index.html' style='text-decoration:none; color:black; font-size:25px;' ><i class="fas fa-home"></i></a></div>
+
+<br><label style='display:none;' id='copylink' ></label>
+<a style='display:block;' id='link' href='' >click</a><br>
+
+<div ><input type='text' id='surl' value='' placeholder='shareable link' style=' padding:5px; border:2px solid #1a1a1a;' >
+<br><br><input type='button' id='copybtn' class='btn' onclick='copytext()' style=' font-family:Oleo Script; color:white;' value='copy' />
+</div>
+
+<div style='padding-top:30px; font-size:15px;'>
+<p>Now send this link to the person who asked these questions</p>
+</div>
+
+<div style='padding:12px; font-size:12px;'>
+<p>*check your link before sharing as once shared no changes can be made to the answers associated with it, you'll have to create a new link to make changes.</p>
+</div>
+
+<div style='display:none;'>
+<br><a id='wapplink' style='text-decoration:none;' href="" ><button class='btn' style='font-family:Oleo Script; color:white;'>or share on whatsapp</button></a>
+</div>
+
+<div style=''>
+<br><a style='text-decoration:none;' href="index.html" ><button class='btn' style='font-family:Oleo Script; color:white;'>create your slambuk</button></a>
+</div>
+
+</div>
+
+</div>
+</div>
+
+<div id='foot' class='footer' style='font-family:sacramento; width:100%; font-size:25px; padding: 60px 20px 60px 20px;  color:black; background:white;'>
+<p>Make a list of five questions, the answers of which you would like to know from others, then create a link for the same and place the link in your instagram bio.</p>
+<br><p>- A conversation starter for interesting strangers -</p>
+<br><p style='font-family:calibri; font-size:13px; '>Slambuk is a decentralized application which means none of the questions or answers are stored in a centralised database.</p>
+<br><p style='font-family:calibri; font-size:11px; '>A Ryan Delphic handicraft<br>&copy; slambuk | 2019</p>
+</div>
+
 </div>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -24,14 +131,25 @@
 var encrypted = localStorage.getItem("answerslink");
 	
 	document.getElementById("copylink").innerHTML = 'https://slambuk.github.io/slambuk/ansparse.html?a='+encrypted;
+	document.getElementById("link").href = 'ansparse.html?a='+encrypted;
 	//shorturl('https://slambuk.github.io/slambuk/ansparse.html?a='+encrypted);
 	shorturl();
 	document.getElementById("surl").value = window.location.href;
+	
+	var str = document.getElementById("surl").value; 
+	var res = str.replace("#", "%23");
+	
+	var link1 = 'https://wa.me/?text=';
+	var link2 = '%0D%0A%0D%0A%0D%0A';
+	document.getElementById("wapplink").href = link1 + res;
 
 function copytext() {
   var copyText = document.getElementById("surl");
   copyText.select();
   document.execCommand("copy");
+  
+  document.getElementById("copybtn").value = "link copied";
+  
 }
 
 </script>
