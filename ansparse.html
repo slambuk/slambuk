@@ -1,28 +1,115 @@
 <!DOCTYPE html>
 <html>
 <head>
+<title>SLAMBUK</title>
+<meta charset='UTF-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0'>
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+
+<link href="https://fonts.googleapis.com/css?family=Sacramento|Shadows+Into+Light|Poppins|Emilys+Candy|Megrim|Faster+One|Amatic+SC|Anton|Monoton|Oleo+Script|Sigmar+One|Cabin+Sketch|Homemade+Apple" rel="stylesheet">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script><style>
+
+body{
+	margin:0;
+	background-image: url("https://cadel.xyz/media/swirl_pattern.png");
+}
+
+.btn{
+	background:#404040;
+	border-radius:50px;
+	color:white;
+	width:200px;
+	font-size:17px;
+	//text-decoration: none;
+}
+.btn:hover{
+	color:white;
+}
+.btn:focus{
+	color:white;
+}
+
+label{
+	font-weight: normal;
+}
+
+textarea {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+	
+    width: 60%;
+	resize: none;
+}
+
+@media screen and (max-width: 34em){
+
+textarea{
+	width: 250px;
+}
+
+}
+
+</style>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.2/rollups/aes.js"></script>
 <script>
+$(document).ready(function() {
+    $('html,body').animate({
+			scrollTop: $("#cont").offset().top
+		}, 'slow');
+});
 
-
+function howto(){
+	$('html,body').animate({
+			scrollTop: $("#foot").offset().top
+		}, 'slow');
+}
 
 </script>
 </head>
-<body style='background:yellow;'>
-<a href='index.html' >HOME</a>
+<body>
 
-<div id='dispques' ></div>
-<div>
-<p>Questions by <label id='qname' ></label></p>
-<p><label id='q1'></label><br><label id='a1' placeholder='your answer' ></label></p>
-<p><label id='q2'></label><br><label id='a2' placeholder='your answer' ></label></p>
-<p><label id='q3'></label><br><label id='a3' placeholder='your answer' ></label></p>
-<p><label id='q4'></label><br><label id='a4' placeholder='your answer' ></label></p>
-<p><label id='q5'></label><br><label id='a5' placeholder='your answer' ></label></p>
-<p>Your full name or instagram username : <label id='aname'  ><label/></p>
+<div class="jumbotron text-center" style='font-family:amatic sc; background:white; /*background:rgba(26, 26, 26, 0.1);*/'>
+  <h1 style='font-size:60px;'><b>SLAMBUK</b></h1>
+  <p style='font-size:30px;'>Know the world, your way</p>
+<p style=' font-family:Oleo Script; color:white;'><button onclick='howto()' class='btn'>How to do that?</button></p>  
 </div>
 
+<div id='cont' class="container" style='text-align:center; width:100%; background:; padding:0px;'>
+<div class="row" style='display:inline-block; width:100%; background:;'>
+<div class="col-sm-4" style='display:inline-block; background:; width:100%;'>
+
+<div style=' padding-bottom:30px; '>
+<div style='padding-bottom:5px;'><a href='index.html' style='text-decoration:none; color:black; font-size:25px;' ><i class="fas fa-home"></i></a></div>
+
+<div id='dispques' ></div>
+<div style='display:inline-block; font-family:calibri; width:90%; background:rgba(255,255,255,0.5);'>
+<p><label id='qname' style='font-weight:bold; font-size:30px; padding:5px;' ></label></p>
+<p><label id='q1' style='font-weight:bold; width:90%; font-size:18px;'></label><br><label style='font-weight:; font-size:15px; width:90%; color:;' id='a1' placeholder='your answer' ></label></p>
+<p><label id='q2' style='font-weight:bold; width:90%; font-size:18px;'></label><br><label style='font-weight:; font-size:15px; width:90%; color:;' id='a2' placeholder='your answer' ></label></p>
+<p><label id='q3' style='font-weight:bold; width:90%; font-size:18px;'></label><br><label style='font-weight:; font-size:15px; width:90%; color:;' id='a3' placeholder='your answer' ></label></p>
+<p><label id='q4' style='font-weight:bold; width:90%; font-size:18px;'></label><br><label style='font-weight:; font-size:15px; width:90%; color:;' id='a4' placeholder='your answer' ></label></p>
+<p><label id='q5' style='font-weight:bold; width:90%; font-size:18px;'></label><br><label style='font-weight:; font-size:15px; width:90%; color:;' id='a5' placeholder='your answer' ></label></p>
+<p><label id='aname' style='font-weight:bold; font-size:30px; padding:5px;' ><label/></p>
+</div>
+
+</div>
+
+</div>
+</div>
+
+<div id='foot' class='footer' style='font-family:sacramento; width:100%; font-size:25px; padding: 60px 20px 60px 20px;  color:black; background:white;'>
+<p>Make a list of five questions, the answers of which you would like to know from others, then create a link for the same and place the link in your instagram bio.</p>
+<br><p>- A conversation starter for interesting strangers -</p>
+<br><p style='font-family:calibri; font-size:13px; '>Slambuk is a decentralized application which means none of the questions or answers are stored in a centralised database.</p>
+<br><p style='font-family:calibri; font-size:11px; '>A Ryan Delphic handicraft<br>&copy; slambuk | 2019</p>
+</div>
+
+</div>
 
 </body>
 <script>
@@ -60,7 +147,7 @@ var storedans = JSON.parse(decrypted.toString(CryptoJS.enc.Utf8));
 	document.getElementById("q5").innerHTML = storedans[8];
 	document.getElementById("a5").innerHTML = storedans[9];
 	document.getElementById("qname").innerHTML = storedans[10];
-	document.getElementById("aname").innerHTML = storedans[11];
+	document.getElementById("aname").innerHTML = '- '+storedans[11];
 
 
 </script>
