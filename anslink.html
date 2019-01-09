@@ -83,8 +83,14 @@ function howto(){
 <div class="row" style='display:inline-block; width:100%; background:;'>
 <div class="col-sm-4" style='display:inline-block; background:; width:100%;'>
 
-<div style=' height:500px; font-family:calibri;'>
+<div style=' min-height:250px; font-family:calibri; padding-bottom:30px;'>
 <div style='padding-bottom:5px;'><a href='index.html' style='text-decoration:none; color:black; font-size:25px;' ><i class="fas fa-home"></i></a></div>
+
+<div id='crtlnk' >
+<br><br><input type='button' id='crtlnkbtn' class='btn' onclick='createlink()' style=' font-family:Oleo Script; color:white;' value='create shareable link' />
+</div>
+
+<div id='cpylnk' style='display:none;'>
 
 <br><label style='display:none;' id='copylink' ></label>
 <a style='display:block;' id='link' href='' >click</a><br>
@@ -112,6 +118,8 @@ function howto(){
 </div>
 
 </div>
+
+</div>
 </div>
 
 <div id='foot' class='footer' style='font-family:sacramento; width:100%; font-size:25px; padding: 60px 20px 60px 20px;  color:black; background:white;'>
@@ -128,7 +136,8 @@ function howto(){
 </body>
 <script>
 
-var encrypted = localStorage.getItem("answerslink");
+function createlink() {
+	var encrypted = localStorage.getItem("answerslink");
 	
 	document.getElementById("copylink").innerHTML = 'https://slambuk.github.io/slambuk/ansparse.html?a='+encrypted;
 	document.getElementById("link").href = 'ansparse.html?a='+encrypted;
@@ -142,6 +151,11 @@ var encrypted = localStorage.getItem("answerslink");
 	var link1 = 'https://wa.me/?text=';
 	var link2 = '%0D%0A%0D%0A%0D%0A';
 	document.getElementById("wapplink").href = link1 + res;
+	
+	document.getElementById("crtlnk").style.display = 'none';
+	document.getElementById("cpylnk").style.display = 'inline-block';
+
+}	
 
 function copytext() {
   var copyText = document.getElementById("surl");
