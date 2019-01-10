@@ -43,6 +43,7 @@ function getrandom() {
 function genhash(){
     if (window.location.hash == ""){
         window.location.hash = getrandom();
+		hvalue = window.location.hash.substr(1);
     }
 	//hashhash = getrandom();
 }
