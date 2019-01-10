@@ -58,6 +58,7 @@ textarea{
 <script>
 
 //localStorage.removeItem("questions");
+var hvalue = '';
 
 function createlink(){
 	document.getElementById("dispques").innerHTML = '';
@@ -92,8 +93,9 @@ function createlink(){
 		
 	//shorturl('https://slambuk.github.io/slambuk/urlparse.html?q='+encrypted);
 	shorturl();
-	document.getElementById("surl").value = window.location.href;
-	
+	//document.getElementById("surl").value = window.location.href;
+	document.getElementById("surl").value = 'https://slambuk.github.io/slambuk/hash.html?h='+hvalue;
+
 	$('html,body').animate({
 			scrollTop: $("#clink").offset().top
 		}, 'slow');
@@ -121,11 +123,11 @@ function howto(){
 
 <div style='display:inline-block; font-family:calibri; width:100%; background:; padding-bottom:30px;'>
 <h2 style='font-family:sacramento;'>Your list of questions</h2><br>
-<p>#question1<br><textarea id='q1' rows='3' placeholder='question 1' name='ques1' style='padding-left:5px; padding-right:5px; border:2px solid #1a1a1a;' ></textarea></p>
-<p>#question2<br><textarea id='q2' rows='3' placeholder='question 2' name='ques2' style='padding-left:5px; padding-right:5px; border:2px solid #1a1a1a;' ></textarea></p>
-<p>#question3<br><textarea id='q3' rows='3' placeholder='question 3' name='ques3' style='padding-left:5px; padding-right:5px; border:2px solid #1a1a1a;' ></textarea></p>
-<p>#question4<br><textarea id='q4' rows='3' placeholder='question 4' name='ques4' style='padding-left:5px; padding-right:5px; border:2px solid #1a1a1a;' ></textarea></p>
-<p>#question5<br><textarea id='q5' rows='3' placeholder='question 5' name='ques5' style='padding-left:5px; padding-right:5px; border:2px solid #1a1a1a;' ></textarea></p>
+<p>#question1<br><textarea id='q1' rows='3' maxlength='200' placeholder='question 1' name='ques1' style='padding-left:5px; padding-right:5px; border:2px solid #1a1a1a;' ></textarea></p>
+<p>#question2<br><textarea id='q2' rows='3' maxlength='200' placeholder='question 2' name='ques2' style='padding-left:5px; padding-right:5px; border:2px solid #1a1a1a;' ></textarea></p>
+<p>#question3<br><textarea id='q3' rows='3' maxlength='200' placeholder='question 3' name='ques3' style='padding-left:5px; padding-right:5px; border:2px solid #1a1a1a;' ></textarea></p>
+<p>#question4<br><textarea id='q4' rows='3' maxlength='200' placeholder='question 4' name='ques4' style='padding-left:5px; padding-right:5px; border:2px solid #1a1a1a;' ></textarea></p>
+<p>#question5<br><textarea id='q5' rows='3' maxlength='200' placeholder='question 5' name='ques5' style='padding-left:5px; padding-right:5px; border:2px solid #1a1a1a;' ></textarea></p>
 <p>#your_name<br><input type='text' id='name' placeholder='enter your name' style='text-align:center; border:2px solid #1a1a1a;' /></p>
 <p style='font-size:12px; font-family:calibri; padding:10px;'>*please don't leave any box empty</p>
 <p style=' font-family:Oleo Script;'><input onclick='createlink()' class='btn' type='button' name='addques' value='create shareable link' /></p>
