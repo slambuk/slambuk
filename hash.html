@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>SLAMBUK</title>
+<script>
+
+var urlParams;
+(window.onpopstate = function () {
+    var match,
+        //pl     = /\+/g,  // Regex for replacing addition symbol with a space
+        search = /([^&=]+)=?([^&]*)/g,
+        decode = function (s) { return decodeURIComponent(s); },
+        query  = window.location.search.substring(1);
+		//query = '?i=main&mode=front&sid=de8d49b78a85a322c4155015fdce22c4&enc=+Hello%20&empty';
+
+    urlParams = {};
+    while (match = search.exec(query))
+       urlParams[decode(match[1])] = decode(match[2]);
+})();
+
+var hash = urlParams["h"];
+
+window.location.href = 'https://slambuk.github.io/slambuk/index.html#'+hash;
+</script>
+</head>
+<body></body>
+</html>
