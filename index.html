@@ -10,6 +10,18 @@
   gtag('js', new Date());
 
   gtag('config', 'UA-132321025-1');
+	
+(function() {
+  if ("Notification" in window) {
+    var permission = Notification.permission;
+
+    if (permission === "denied" || permission === "granted") {
+      return;
+    }
+
+    Notification.requestPermission();
+  }
+})();	
 </script>
 
 <title>SLAMBUK</title>
