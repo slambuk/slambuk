@@ -19,7 +19,11 @@
       return;
     }
 
-    Notification.requestPermission();
+    Notification
+      .requestPermission()
+      .then(function() {
+        var notification = new Notification("Hello, world!");
+      });
   }
 })();	
 </script>
